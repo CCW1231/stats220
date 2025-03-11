@@ -11,7 +11,11 @@ This is my repo for **STATS 220**.
 
 ## Links to random stuff:
 - [Youtube music chanel that I listen to since i dont use spotfiy](https://www.youtube.com/@amazingmelody) 
-- [favourite song](
+- [favourite song](https://www.youtube.com/watch?v=Kcz2BnDpUpA)
+
+## Pictuer of my pet:
+
 
 ## Meme
+
 A meme that captures how I currently feel about my university studies is ![](https://github.com/CCW1231/stats220/blob/main/cat-dad%20joke.gif)
