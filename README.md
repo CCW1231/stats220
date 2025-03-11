@@ -12,4 +12,6 @@ This is my repo for **STATS 220**.
 ## Links to random stuff:
 - [Youtube music chanel that I listen to since i dont use spotfiy](https://www.youtube.com/@amazingmelody) 
 - [favourite song](
+
+## Meme
 A meme that captures how I currently feel about my university studies is ![](file:///C:/Users/camwi/Downloads/cat-dad%20joke.gif)
