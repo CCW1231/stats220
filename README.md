@@ -1,6 +1,6 @@
 # Stats220
 
-This is my repo for **STATS 220**. 
+*This is my repo for* **STATS 220**. 
 
 ## A little about me:
 
@@ -14,8 +14,10 @@ This is my repo for **STATS 220**.
 - [favourite song](https://www.youtube.com/watch?v=Kcz2BnDpUpA)
 
 ## Pictuer of my pet:
+**Her name is Skye**
+![](https://github.com/CCW1231/stats220/blob/main/20240614_121132.jpg)
 
 
 ## Meme
 
-A meme that captures how I currently feel about my university studies is ![](https://github.com/CCW1231/stats220/blob/main/cat-dad%20joke.gif)
+*A meme that captures how I currently feel about my university studies is*  ![](https://github.com/CCW1231/stats220/blob/main/cat-dad%20joke.gif)
