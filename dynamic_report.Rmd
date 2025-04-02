@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 library(dplyr)  
 library(ggplot2)
 ```
-### Sumarry of the data:
+### Sumarry of the data collected:
 - **The minimum number of passengers** calculates the lowest amount of passanges on a bus
 - **The maximum number of passengers** calculates the highest amount of passengers on a bus
 - **The mean number of passengers** calculates the average amount of passengers on a bus
@@ -77,7 +77,7 @@ ggplot(latest_data, aes(x = num_passengers)) +
   )
 ```
 
-## Summary of the Data
+## Summary of the Data collected
 
 - `r paste("The minimum number of passengers recorded is", num_passengers_summary$min_passengers_recorded, 
           ". The maximum number of passengers recorded is", num_passengers_summary$max_passengers_recorded, 
