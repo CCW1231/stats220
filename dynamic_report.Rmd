@@ -1,0 +1,88 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(dplyr)  
+library(ggplot2)
+```
+### Sumarry of the data:
+- **The minimum number of passengers** calculates the lowest amount of passanges on a bus
+- **The maximum number of passengers** calculates the highest amount of passengers on a bus
+- **The mean number of passengers** calculates the average amount of passengers on a bus
+
+```{css}
+body {
+  background-color: grey;
+  color: lightblue;
+}
+
+```
+## Bus Data with graphs for distribution of time and passangers
+
+I am analyzing the number of passengers and the time on bus 195 that starts from stop C Alfred street near Britomart. I want to see if there are more people on certain times.
+
+```{r}
+# Load the data from a CSV file
+data_bus <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqrIPrbtbUdOxqxFJFzLIGmbZy83YVRMlIFe4z7qtOEqCt6eF77PanjZcQ8eAnPZQChhvduTIC0lYg/pub?output=csv"
+logged_data <- read.csv(data_bus)
+
+# Renaming the columns for clarity
+latest_data <- logged_data %>%
+  rename(
+    bus_time = names(logged_data)[2],  # Change to appropriate column name
+    num_passengers = names(logged_data)[3],  # Change to appropriate column name
+    travel_reason = names(logged_data)[4]  # Change to appropriate column name
+  )
+
+# Summary calculations for passengers
+num_passengers_summary <- latest_data %>%
+  summarise(
+    min_passengers_recorded = min(num_passengers, na.rm = TRUE),
+    max_passengers_recorded = max(num_passengers, na.rm = TRUE),
+    average_passengers_recorded = mean(num_passengers, na.rm = TRUE)
+  )
+
+# Summary calculations for bus times
+bus_time_summary <- latest_data %>%
+  summarise(
+    min_bus_time = min(bus_time, na.rm = TRUE),
+    max_bus_time = max(bus_time, na.rm = TRUE),
+    average_bus_time = mean(bus_time, na.rm = TRUE)
+  )
+```
+
+```{r}
+#graphs for bus times
+ggplot(latest_data, aes(x = bus_time)) +
+  geom_bar(fill = "skyblue", color = "grey", alpha = 0.8) +
+  labs(
+    title = "Distribution of Bus Times Recorded",
+    x = "Bus Time", 
+    y = "Frequency"
+  )
+
+```
+
+```{r}
+#graphs for passengers
+ggplot(latest_data, aes(x = num_passengers)) +
+  geom_bar(fill = "skyblue", color = "grey", alpha = 0.8) +
+  labs (
+    title = "Distribution of the Number of Passengers on Bus 195 from Stop C, Alfred Street Near Britomart",
+    x = "Number of Passengers",
+    y = "Count of Responses"
+  )
+```
+
+## Summary of the Data
+
+- `r paste("The minimum number of passengers recorded is", num_passengers_summary$min_passengers_recorded, 
+          ". The maximum number of passengers recorded is", num_passengers_summary$max_passengers_recorded, 
+          ". The average number of passengers recorded is", round(num_passengers_summary$average_passengers_recorded, 1))`
+
+- `r paste("The earliest recorded bus time is", bus_time_summary$min_bus_time, 
+          ". The latest recorded bus time is", bus_time_summary$max_bus_time, 
+          ". The average bus time is", round(bus_time_summary$average_bus_time, 1))`
