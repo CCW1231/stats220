@@ -32,9 +32,9 @@ logged_data <- read.csv(data_bus)
 # Renaming the columns for clarity
 latest_data <- logged_data %>%
   rename(
-    bus_time = names(logged_data)[2],  # Change to appropriate column name
-    num_passengers = names(logged_data)[3],  # Change to appropriate column name
-    travel_reason = names(logged_data)[4]  # Change to appropriate column name
+    bus_time = names(logged_data)[2], 
+    num_passengers = names(logged_data)[3],  
+    travel_reason = names(logged_data)[4]  
   )
 
 # Summary calculations for passengers
